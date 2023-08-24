@@ -15,8 +15,8 @@ public class CrudSpringApplication {
 		SpringApplication.run(CrudSpringApplication.class, args);
 	}  
 
-	@Bean
-	CommandLineRunner initDatabase(CourseRepository courseRepository){
+	@Bean  //o spring irá gerenciar todo o ciclo de vida 
+	CommandLineRunner initDatabase(CourseRepository courseRepository){    //CourseRepository extends JpaRepository<Course, Long>, tem acesso ao deleteAll(), findAll(), etc.
 		return args -> {
 			courseRepository.deleteAll();
 

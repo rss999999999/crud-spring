@@ -12,14 +12,16 @@ import lombok.Data;
 
 public class Course {
 
+    //Qnto mais informação tiver p o banco de dados, melhor...
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "nome", length = 200, nullable = false)
+    @Column(length = 200, nullable = false)
     private String name;
     
-    @Column(name = "categoria", length = 30, nullable = false)
+    @Column(length = 30, nullable = false)
     private String category;
     
 }

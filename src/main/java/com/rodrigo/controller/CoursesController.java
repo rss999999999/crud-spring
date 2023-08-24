@@ -21,10 +21,10 @@ import lombok.AllArgsConstructor;
 public class CoursesController {
 
     //@Autowired  //injeção via atributo, porém isso não é uma boa 
-    private final CourseRepository courseRepository;
+    private final CourseRepository courseRepository;  
 
-    @GetMapping 
-    public List<Course> list(){
+    @GetMapping   //mesma coisa do @RequestMapping(method = RequestMethod.GET)
+    public List<Course> list(){           //usa o import declarado acima para pegar a lista da pasta model/Course.java
         return courseRepository.findAll();
     }
     

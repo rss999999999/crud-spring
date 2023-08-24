@@ -1,5 +1,7 @@
 package com.rodrigo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,12 +18,13 @@ public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonProperty("_id")   //uma forma alternativa de usar um DTO (data transfer object)
     private Long id;
 
-    @Column(length = 200, nullable = false)
+    @Column( length = 200, nullable = false)
     private String name;
     
-    @Column(length = 30, nullable = false)
+    @Column( length = 30, nullable = false)
     private String category;
     
 }
